@@ -2,8 +2,6 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
-
-
   cloud {
       organization = "HEMANTA-TRV"
       workspaces {
