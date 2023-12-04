@@ -3,10 +3,10 @@
 
 terraform {
   cloud {
-      organization = "HEMANTA-TRV"
-      workspaces {
-        name = "dev"
-      }
+    organization = "HEMANTA-TRV"
+    workspaces {
+      name = "DEV"
+    }
   }
 
   required_providers {
@@ -15,5 +15,5 @@ terraform {
       version = "~> 4.15.0"
     }
   }
-  required_version = "~> 1.2.0"
+required_version = ">= 1.2"
 }
