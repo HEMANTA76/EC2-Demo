@@ -1,13 +1,12 @@
 provider "aws" {
   region = var.aws_region
 }
-resource "random_pet" "name" {}
-resource "aws_instance" "web" {
-  ami = "ami-0230bd60aa48260c6"
+data "aws_availability_zones" "region_available_zones" {
+  state = "available"
+}
 
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = random_pet.name.id
-  }
+module "vpc_with_tf_registry" {
+  source = "./vpc"
+  az1 = data.aws_availability_zones.region_available_zones.names[0]
+  az2 = data.aws_availability_zones.region_available_zones.names[1]
 }
