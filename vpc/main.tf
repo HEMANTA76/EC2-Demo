@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
   name ="vpc-using-terraform"
-  cidr = "10.0.0/16"
+  cidr = "10.0.0.0/16"
   instance_tenancy = "default"
   azs = [var.az1,var.az2]
   private_subnets = ["10.0.1.0/24","10.0.2.0/24"]

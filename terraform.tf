@@ -5,7 +5,7 @@ terraform {
   cloud {
     organization = "HEMANTA-TRV"
     workspaces {
-      name = "DEV"
+      name = "EC2-Demo"
     }
   }
 
